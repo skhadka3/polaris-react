@@ -12,8 +12,16 @@ shared:
     run:
       - yarn run build
       - yarn pack
+      - mkdir artifacts
+      - mv shopify-polaris-*.tgz artifacts/
     artifact_paths:
-      - 'shopify-polaris-*.tgz'
+      - 'artifacts'
+  build-web: &build-web
+    label: 'Build web'
+    trigger: 'web-production-builder '
+    build:
+      env:
+        PACKAGE_FILENAME: 'filename'
 
 steps:
   - <<: *build-polaris
