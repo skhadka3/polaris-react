@@ -12,7 +12,7 @@ shared:
     run:
       - yarn run build
       - yarn pack
-      - mv shopify-polaris-*.tgz "artifacts/shopify-polaris-${BUILDKITE_COMMIT}.tgz
+      - mv shopify-polaris-*.tgz "artifacts/shopify-polaris-${BUILDKITE_COMMIT}.tgz"
     artifact_paths:
       - path: 'artifacts'
         required: true
