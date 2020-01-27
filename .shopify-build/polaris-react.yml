@@ -18,7 +18,7 @@ shared:
         required: true
   build-web: &build-web
     label: 'Build web'
-    trigger: 'web-production-builder '
+    trigger: 'web-production-builder'
     build:
       env:
         BUILD_COMMIT: 'shopify-polaris-${BUILDKITE_COMMIT}.tgz'
