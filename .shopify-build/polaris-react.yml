@@ -13,7 +13,7 @@ shared:
       - yarn run build
       - yarn pack
     artifact_paths:
-      - 'shopify-polaris-*.tar.gz'
+      - 'shopify-polaris-*.tgz'
 
 steps:
   - <<: *build-polaris
