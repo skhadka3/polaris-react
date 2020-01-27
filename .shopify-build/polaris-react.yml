@@ -19,10 +19,12 @@ shared:
   build-web: &build-web
     label: 'Build web'
     trigger: 'web-production-builder'
+    allow_dependency_failure: false
     build:
       env:
         BUILD_COMMIT: 'shopify-polaris-${BUILDKITE_COMMIT}.tgz'
 
 steps:
   - <<: *build-polaris
+  - wait
   - <<: *build-web
