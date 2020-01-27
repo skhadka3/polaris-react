@@ -12,7 +12,6 @@ shared:
     run:
       - yarn run build
       - yarn pack
-      - mkdir artifacts
       - mv shopify-polaris-*.tgz artifacts/
     artifact_paths:
       - 'artifacts'
