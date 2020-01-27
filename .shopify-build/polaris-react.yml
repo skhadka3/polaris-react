@@ -19,6 +19,7 @@ shared:
   build-web: &build-web
     label: 'Build web'
     trigger: 'web-production-builder'
+    depends_on: 'build-polaris'
     allow_dependency_failure: false
     build:
       branch: master
@@ -27,5 +28,4 @@ shared:
 
 steps:
   - <<: *build-polaris
-  - wait
   - <<: *build-web
