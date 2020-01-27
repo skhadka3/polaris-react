@@ -12,15 +12,17 @@ shared:
     run:
       - yarn run build
       - yarn pack
-      - mv shopify-polaris-*.tgz artifacts/
+      - mv shopify-polaris-*.tgz "artifacts/shopify-polaris-${BUILDKITE_COMMIT}.tgz
     artifact_paths:
-      - 'artifacts'
+      - path: 'artifacts'
+        required: true
   build-web: &build-web
     label: 'Build web'
     trigger: 'web-production-builder '
     build:
       env:
-        PACKAGE_FILENAME: 'filename'
+        BUILD_COMMIT: 'shopify-polaris-${BUILDKITE_COMMIT}.tgz'
 
 steps:
   - <<: *build-polaris
+  - <<: *build-web
