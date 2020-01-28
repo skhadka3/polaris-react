@@ -20,7 +20,7 @@ shared:
     label: 'Build web'
     trigger: 'web-polaris-builder'
     build:
-      branch: master
+      branch: add-polaris-build-pipeline
       commit: HEAD
       env:
         BUILD_COMMIT: 'shopify-polaris-${BUILDKITE_COMMIT}.tgz'
