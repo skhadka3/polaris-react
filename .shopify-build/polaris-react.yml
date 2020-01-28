@@ -15,8 +15,7 @@ shared:
     timeout: 35m
     dependencies:
       - yarn
-    run:
-      <<: [*dog, *cat]
+    run: [*dog, *cat]
     artifact_paths:
       - path: 'artifacts'
         required: true
