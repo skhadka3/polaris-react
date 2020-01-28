@@ -1,3 +1,9 @@
+dog: &dog
+  - echo "dog"
+
+cat: &cat
+  - echo "cat"
+
 containers:
   default:
     docker: gcr.io/shopify-docker-images/apps/production/web-platform-ci-node:10.18.0-yarn-1.21.1
@@ -10,17 +16,16 @@ shared:
     dependencies:
       - yarn
     run:
-      - yarn run build
-      - yarn pack
-      - mv shopify-polaris-*.tgz "artifacts/shopify-polaris-${BUILDKITE_COMMIT}.tgz"
+      <<: [*dog, *cat]
     artifact_paths:
       - path: 'artifacts'
         required: true
   build-web: &build-web
     label: 'Build web'
-    trigger: 'web-production-builder'
+    trigger: 'web-polaris-builder'
     build:
       branch: master
+      commit: HEAD
       env:
         BUILD_COMMIT: 'shopify-polaris-${BUILDKITE_COMMIT}.tgz'
 
