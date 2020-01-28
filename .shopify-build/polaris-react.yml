@@ -17,7 +17,7 @@ shared:
       - path: 'artifacts'
         required: true
   build-web: &build-web
-    label: 'Build web'
+    label: 'Build polaris'
     trigger: 'web-polaris-builder'
     build:
       branch: add-polaris-build-pipeline
