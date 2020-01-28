@@ -20,6 +20,7 @@ module.exports = {
     '@storybook/addon-notes',
     '@storybook/addon-a11y',
     '@storybook/addon-contexts',
+    '@storybook/addon-knobs/register',
   ],
   webpackFinal: (config) => {
     const isProduction = config.mode === 'production';

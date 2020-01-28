@@ -2,9 +2,21 @@ import React from 'react';
 import {addParameters, addDecorator} from '@storybook/react';
 import {setConsoleOptions} from '@storybook/addon-console';
 import {withContexts} from '@storybook/addon-contexts/react';
+import {text, withKnobs} from '@storybook/addon-knobs';
 
 import {AppProvider} from '../src';
 import enTranslations from '../locales/en.json';
+
+const primary = text('primary', '#008060');
+const surface = text('surface', '#111213');
+const onSurface = text('onSurface', '#111213');
+const interactive = text('interactive', '#2e72d2');
+const secondary = text('secondary', '#111213');
+const critical = text('critical', '#d82c0d');
+const warning = text('warning', '#ffc453');
+const highlight = text('highlight', '#5bcdda');
+const success = text('success', '#008060');
+const decorative = text('decorative', '#ffc96b');
 
 addParameters({
   options: {
@@ -49,7 +61,21 @@ addDecorator(
           props: {
             i18n: enTranslations,
             features: {unstableGlobalTheming: true},
-            theme: {colorScheme: 'light'},
+            theme: {
+              UNSTABLE_colors: {
+                primary,
+                surface,
+                onSurface,
+                interactive,
+                secondary,
+                critical,
+                warning,
+                highlight,
+                success,
+                decorative,
+              },
+              colorScheme: 'light',
+            },
           },
         },
         {
@@ -57,7 +83,21 @@ addDecorator(
           props: {
             i18n: enTranslations,
             features: {unstableGlobalTheming: true},
-            theme: {colorScheme: 'dark'},
+            theme: {
+              UNSTABLE_colors: {
+                primary,
+                surface,
+                onSurface,
+                interactive,
+                secondary,
+                critical,
+                warning,
+                highlight,
+                success,
+                decorative,
+              },
+              colorScheme: 'dark',
+            },
           },
         },
       ],
@@ -78,3 +118,5 @@ setConsoleOptions((opts) => {
   ];
   return opts;
 });
+
+addDecorator(withKnobs);
