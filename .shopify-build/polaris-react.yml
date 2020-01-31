@@ -24,6 +24,7 @@ shared:
       commit: HEAD
       env:
         BUILD_COMMIT: 'shopify-polaris-${BUILDKITE_COMMIT}.tgz'
+        POLARIS_BUILD_NUMBER: $BUILDKITE_BUILD_NUMBER
 
 steps:
   - <<: *build-polaris
