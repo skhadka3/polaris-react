@@ -174,7 +174,10 @@ Use to help merchants know what clear, single action to take in the section the 
   popoverActions={[{content: 'Dismiss', onAction: () => {}}]}
   portrait
 >
-  <YoutubePlayer url="NZZW8L7h7Fs" />
+  <VideoThumbnail
+    videoLength={80}
+    thumbnailUrl="https://burst.shopifycdn.com/photos/smiling-businesswoman-in-office.jpg?width=1850"
+  />
 </VideoCard>
 ```
 
@@ -199,7 +202,10 @@ Use to let merchants know about a feature or opportunity where there are two dis
   popoverActions={[{content: 'Dismiss', onAction: () => {}}]}
   portrait
 >
-  <YoutubePlayer url="NZZW8L7h7Fs" />
+  <VideoThumbnail
+    videoLength={80}
+    thumbnailUrl="https://burst.shopifycdn.com/photos/smiling-businesswoman-in-office.jpg?width=1850"
+  />
 </VideoCard>
 ```
 
@@ -219,7 +225,10 @@ Use when you would like to surface a video card but not take up too much screen 
   description="Discover how Shopify can power up your entrepreneurial journey."
   popoverActions={[{content: 'Dismiss', onAction: () => {}}]}
 >
-  <YoutubePlayer url="NZZW8L7h7Fs" />
+  <VideoThumbnail
+    videoLength={80}
+    thumbnailUrl="https://burst.shopifycdn.com/photos/smiling-businesswoman-in-office.jpg?width=1850"
+  />
 </VideoCard>
 ```
 

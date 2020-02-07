@@ -69,8 +69,7 @@ Omit the timestamp
 ```jsx
 <VideoThumbnail
   videoLength={80}
-  thumbnailUrl={videoOverlay}
-  onClick={togglePlayingStatus}
+  thumbnailUrl="https://burst.shopifycdn.com/photos/smiling-businesswoman-in-office.jpg?width=1850"
 />
 ```
 
