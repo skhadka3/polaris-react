@@ -656,11 +656,15 @@ $stacking-order: (
     }
 
     &.newDesignLanguage {
+      @include focus-ring($border-width: border-width('base'));
       box-shadow: 0 0 0 border-width('base') currentColor;
 
       &:focus {
-        box-shadow: 0 0 0 border-width('thick') currentColor;
-        @include no-focus-ring;
+        @include focus-ring($style: 'focused');
+      }
+
+      &:active::after {
+        box-shadow: none;
       }
     }
     // stylelint-enable selector-max-class
